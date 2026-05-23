@@ -13,10 +13,10 @@ from flask import Flask, request
 from pyngrok import ngrok
 import os
 
-ngrok.set_auth_token("3E6Nt3kH8x4HxPzzAijUoifVUvi_3hS6dUr1FbReDDz8mu1P6")
+# ngrok.set_auth_token("3E6Nt3kH8x4HxPzzAijUoifVUvi_3hS6dUr1FbReDDz8mu1P6")
 
 app = Flask(__name__)
-os.makedirs("templates", exist_ok=True)
+os.makedirs("./templates", exist_ok=True)
 
 # -----------------------
 # LAGRANGE FUNCTION
@@ -318,9 +318,11 @@ def calculator():
 # -----------------------
 # RUN NGROK
 # -----------------------
-ngrok.kill()
-public_url = ngrok.connect(5000)
+# ngrok.kill()
+# public_url = ngrok.connect(5000)
 
-print("OPEN THIS LINK:", public_url)
+# print("OPEN THIS LINK:", public_url)
 
-app.run(port=5000)
+if __name__ == '__main__':
+    app.run(port=5000)
+
