@@ -7,10 +7,10 @@ Original file is located at
     https://colab.research.google.com/drive/1g4uiRM2tbb3tEjvyq2ER_zowzgNmwkfo
 """
 
-!pip install flask pyngrok
+# !pip install flask pyngrok
 
 from flask import Flask, request
-from pyngrok import ngrok
+# from pyngrok import ngrok
 import os
 
 # ngrok.set_auth_token("3E6Nt3kH8x4HxPzzAijUoifVUvi_3hS6dUr1FbReDDz8mu1P6")
