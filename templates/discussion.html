@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+<h1>Lagrange Interpolation Discussion</h1>
+
+<p>
+Lagrange Interpolation is a numerical method used to estimate unknown values
+from a set of known data points by constructing a polynomial that passes through all points.
+</p>
+
+<h2>Formula</h2>
+
+$$P(x)=\sum_{i=0}^{n} y_i L_i(x)$$
+
+<h2>Basis Polynomial</h2>
+
+$$L_i(x)=\prod_{j \ne i}\frac{x-x_j}{x_i-x_j}$$
+
+<h2>Applications</h2>
+
+<ul>
+<li>Estimating missing values</li>
+<li>Curve fitting</li>
+<li>Engineering calculations</li>
+<li>Scientific modeling</li>
+</ul>
+
+</div>
+
+{% endblock %}

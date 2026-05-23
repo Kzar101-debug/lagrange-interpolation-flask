@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Interactive Calculator</h1>
+
+<div class="card">
+
+<form method="POST">
+
+<label>X Values</label>
+<input type="text" name="x_values" placeholder="1,2,3">
+
+<label>Y Values</label>
+<input type="text" name="y_values" placeholder="2,4,8">
+
+<label>Target X</label>
+<input type="text" name="target_x" placeholder="2.5">
+
+<button type="submit">Calculate</button>
+
+</form>
+
+</div>
+
+{% if error %}
+<div class="error">
+    {{ error }}
+</div>
+{% endif %}
+
+{% if result %}
+
+<div class="card">
+
+<h2>Step-by-Step Solution</h2>
+
+{% for step in steps %}
+
+<div class="step-box">
+
+<h3>Basis Polynomial L{{ step.i }}</h3>
+
+$$
+L_{{ step.i }}(x)=
+\frac{ {{ step.numerator }} }
+{ {{ step.denominator }} }
+$$
+
+<p>Contribution = {{ step.value }}</p>
+
+</div>
+
+{% endfor %}
+
+<div class="answer-box">
+
+<h2>Final Answer</h2>
+
+$$
+P(x) = {{ result }}
+$$
+
+</div>
+
+</div>
+
+{% endif %}
+
+{% endblock %}
